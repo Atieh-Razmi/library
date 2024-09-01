@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <h1>Library</h1>
+    <nav>
+        <a href="{% url 'book_list' %}">Home</a> | 
+        <a href="{% url 'add_book' %}">Add Book</a> | 
+        <form method="get" action="{% url 'search_books' %}" style="display:inline;">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+    <hr>
+    {% include 'messages.html' %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
